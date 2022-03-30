@@ -1,0 +1,61 @@
+.navigation {
+    background-color: #333333;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#name {
+    color: #ffffff;
+    float: left;
+    font-size: 64px;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navigation a {
+    color: #ffffff;
+    float: right;
+    font-size: 64px;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    background-color: #dddddd;
+    color: #000000;
+}
+
+#name:hover {
+    background-color: #dddddd;
+    color: #000000;
+}
+
+.main {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 125px;
+}
+
+.main ul {
+    list-style-type: circle;
+}
+
+.main li {
+    font-size: 20px;
+}
+
+.footer {
+    background-color: #333333;
+    bottom: 0;
+    color: white;
+    font-size: 25px;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
