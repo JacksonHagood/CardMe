@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- CSCE 315-900-3 -->
+
+<html>
+    <head>
+        <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
+    </head>
+
+    <body>
+        <div class = "navigation">
+            <a id = "name" href = "/index">CardMe</a>
+            <a href = "/folders">My Folders</a>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class=" col">
+        
+              <h1>Upload an image</h1>
+              <hr>
+        
+              <form action="/upload-image" method="POST" enctype="multipart/form-data">
+        
+                <div class="form-group">
+                  <label>Select image</label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="image" id="image">
+                    <label class="custom-file-label" for="image">Select image...</label>
+                  </div>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Upload</button>
+        
+              </form>
+        
+            </div>
+          </div>
+        </div>
+
+        <div class = footer>
+            <p>CSCE 315 Section 900 Team 3</p>
+        </div>
+    </body>
+</html>
+
+<!--
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Upload an image</h1>
+      <hr>
+
+      <form action="/upload-image" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label>Select image</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="image">
+            <label class="custom-file-label" for="image">Select image...</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Upload</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+-->
