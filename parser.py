@@ -1,15 +1,15 @@
+import re
+
 def getDefinitions(text: str):
 
     # first symbol seperates words with their definitions
-    first = "$"
+    first = "*"
     # second symbol seperates one word,definiton pair from another
     # appears at the end of each definition
     second = "#"
 
     current = 0
     start = 0
-
-    # return dictionary 
     ret = dict()
 
     while(current < len(text)):
