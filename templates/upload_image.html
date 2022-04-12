@@ -4,6 +4,7 @@
 <html>
     <head>
         <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
+        <script type="text/javascript" src = "./functions.js"></script>
     </head>
 
     <body>
@@ -29,9 +30,63 @@
                   </div>
                 </div>
         
-                <button type="submit" class="btn btn-primary">Upload</button>
-        
+                <button type="submit" id = "uploadbtn" class="btn-primary" onclick="promptFunction()">Upload</button>
+
               </form>
+
+              <div>
+                <button id = "test" onclick="promptFunction()">Test</button>
+
+              </div> -->
+
+              <script type = "text/javascript">
+
+                function addNew(text){
+                    var h = document.createElement("div");
+                    //var t = document.createTextNode(text);
+                    h.innerHTML += text;
+                    h.style.width = "5em";
+                    h.style.height = "2em";
+                    h.style.border = "1px solid black";
+                    h.style.textAlign = "center";
+                    h.style.marginBottom = "1px";
+
+                    var page = document.createElement("html");
+                    document.body.appendChild(page);
+
+                    document.body.appendChild(h);
+                }
+
+                function promptFunction(){
+                    var x;
+                    var name=prompt("Please enter a folder name","Folder name");
+                    if (name!=null){
+                      var x = addNew(name);
+                    }
+                }
+
+                /*function addNew(){
+                  const newdiv = document.createElement("div");
+                  console.log("add");
+                  //newdiv.classList.add('div-shadow');
+                  newdiv.style.width = "5em";
+                  newdiv.style.height = "2em";
+                  newdiv.style.border = "1px solid black";
+                  //newdiv.style.margin: "0 1em 1em 0";
+                  newdiv.style.marginBottom = "1px";
+                  document.body.appendChild(newdiv);
+                  
+                  localStorage.setItem("wasPageRefreshed" , true);
+
+                }
+
+                if(localStorage.getItem("wasPageRefreshed")){
+                    addNew();
+                    localStorage.setItem("wasPageRefreshed" , false);
+                }*/
+
+
+              </script>
 
               <div id='info_section'>
                   <p>{{ data }}</p>
@@ -46,32 +101,3 @@
         </div>
     </body>
 </html>
-
-<!--
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-
-      <h1>Upload an image</h1>
-      <hr>
-
-      <form action="/upload-image" method="POST" enctype="multipart/form-data">
-
-        <div class="form-group">
-          <label>Select image</label>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" name="image" id="image">
-            <label class="custom-file-label" for="image">Select image...</label>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Upload</button>
-
-      </form>
-
-    </div>
-  </div>
-</div>
-
--->
