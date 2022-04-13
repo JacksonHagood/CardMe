@@ -16,9 +16,20 @@
         </div>
 
         <div class = main>
+
             <p>
-                (folders page)
-                <a href="/flashcards">(Test Flashcards Link)</a>
+ 
+                <div class = "folders-list">
+                    
+                {%for item in mylist%}
+
+                    <div class="folder_name">
+                        {{item}}
+                    </div>
+
+                {%endfor%}
+
+                </div>
             </p>
         </div>
 
