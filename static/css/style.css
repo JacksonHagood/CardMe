@@ -137,3 +137,18 @@
 .flashcards-pane .individual {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.folder_name {
+    
+    display: inline-block;
+    justify-content: space-between;
+    border-style: dotted;
+    margin-right: 5em;
+    margin: 9%;
+    padding: 4%;
+    
+}
+
+.folder_name .individual {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
