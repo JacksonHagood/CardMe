@@ -26,11 +26,12 @@
                   <label>Select image</label>
                   <div class="custom-file">
                     <input type="file" class="custom-file-input" name="image" id="image">
-                    <!-- <label class="custom-file-label" for="image">Select image...</label> -->
                   </div>
+                  <input name="text">
                 </div>
-        
-                <button type="submit" id = "uploadbtn" class="btn-primary" onclick="promptFunction()">Upload</button>
+                
+                <button type="submit" class="btn btn-primary">Upload</button>
+                <!-- <button type="submit" id = "uploadbtn" class="btn-primary" onclick="promptFunction()">Upload</button> -->
 
               </form>
 
@@ -52,13 +53,13 @@
                     document.body.appendChild(h);
                 }
 
-                function promptFunction(){
-                    var x;
-                    var name=prompt("Please enter a folder name","Folder name");
-                    if (name!=null){
-                      var x = addNew(name);
-                    }
-                }
+                // function promptFunction(){
+                //     var x;
+                //     var name=prompt("Please enter a folder name","Folder name");
+                //     if (name!=null){
+                //       var x = addNew(name);
+                //     }
+                // }
 
                 /*function addNew(){
                   const newdiv = document.createElement("div");
