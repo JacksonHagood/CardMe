@@ -134,3 +134,55 @@
     top: 50%;
     left: 50%;
 }
+
+/* flashcards display formatting */
+
+.flashcards-pane {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.input-wraper {
+    display: none;
+}
+
+label div.card-data {
+    transition: 1000ms;
+}
+
+.input-wraper:checked + label div.card-data{
+    transform: rotateY(180deg);
+}
+
+.single-card {
+    height: 150px;
+    width: 100px;
+}
+
+.flip-pane {
+    height: 100px;
+    width: 100px;
+}
+
+.card-data {
+    align-items: center;
+    position: relative;
+    border-style: double;
+    border-width: 3px;
+    border-color: black;
+    background-color: whitesmoke;
+    height: 100px;
+    width: 100px;
+}
+
+.card-data .word{
+    display: grid;
+    justify-content: center;
+}
+
+.card-data .def {
+    display: grid;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
