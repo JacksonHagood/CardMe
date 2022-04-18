@@ -19,9 +19,11 @@
 
             <p>     
                 {%for item in mylist%}
-                    <form action = "{{ url_for('runFlashcards') }}" method="post">
-                        <th><button type="text" name="item_fn" value={{ item }} required>{{item}}</button></th>
-                    </form>
+                    <div class="folder_name">
+                        <form action = "{{ url_for('runFlashcards') }}" method="post">
+                            <th><button class = "folders_btn" type="text" name="item_fn" value={{ item }} required>{{item}}</button></th>
+                        </form>
+                    </div>
                 {%endfor%}
 
                 {{data}}

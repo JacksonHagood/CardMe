@@ -186,3 +186,32 @@ label div.card-data {
     justify-content: center;
     transform: rotateY(180deg);
 }
+
+.folder_name {
+    position: relative;
+    left: 20%;
+    display: inline-block;
+    margin: 5%;
+    margin-right: 100px;
+    margin-bottom: 10px;
+}
+
+.folders_btn{
+    background-color: #00c8c8; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    width: 150px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    justify-content: space-between;
+    margin-right: 20px;
+    border-style: solid;
+    margin-right: 5em;
+    top : 100px;
+    right : 100px;  
+}
