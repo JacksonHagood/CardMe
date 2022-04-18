@@ -18,6 +18,10 @@
         <div class = main>
             <p>
                 (flashcards page)
+                <form action = "/flashcards" method = "post">
+                    <button name = "demoBTN" type = "submit">DEMO</button>
+                </form>
+
                 <div class = "flashcards-pane">
                 {%for (word, definition, link) in data%}
                 <div class="single-card">
