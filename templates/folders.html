@@ -17,19 +17,14 @@
 
         <div class = main>
 
-            <p>
- 
-                <div class = "folders-list">
-                    
+            <p>     
                 {%for item in mylist%}
-
-                    <div class="folder_name">
-                        {{item}}
-                    </div>
-
+                    <form action = "{{ url_for('runFlashcards') }}" method="post">
+                        <th><button type="text" name="item_fn" value={{ item }} required>{{item}}</button></th>
+                    </form>
                 {%endfor%}
 
-                </div>
+                {{data}}
             </p>
         </div>
 
