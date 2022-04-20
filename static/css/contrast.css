@@ -1,0 +1,255 @@
+@font-face {
+    font-family: Noto;
+    src: url("NotoSans.ttf");
+}
+
+body {
+    background-color: #000000;
+    color: #FF00FF;
+    font-size: 32px;
+    font-family: Noto;
+    text-align: center;
+}
+
+.navigation {
+    border-bottom: solid 10px #00FFFF;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#name {
+    margin-left: 12.5%;
+    float: left;
+    padding: 10px 10px;
+}
+
+#name img {
+    width: 200px;
+    height: 100px;
+}
+
+.navigation a {
+    color: #ffffff;
+    float: right;
+    font-size: 32px;
+    padding: 45px 45px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    background-color: #dddddd;
+    color: #000000;
+}
+
+.right_navigation {
+    margin-right: 12.5%;
+}
+
+#name:hover {
+    background-color: #dddddd;
+    color: #000000;
+}
+
+.main {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-top: 150px;
+}
+
+.main ul {
+    list-style-type: circle;
+}
+
+.main li {
+    font-size: 24px;
+}
+
+.footer {
+    border-top: solid 10px #00FFFF;
+    bottom: 0;
+    color: white;
+    font-size: 24px;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+.button {
+    align-self: center;
+    background-color: #fff;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #41403e;
+    cursor: pointer;
+    text-align:center;
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 10%;
+    position: relative;
+    left: 45%;
+    top: 100px;
+}
+
+.button:hover {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+}
+
+.button:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+.button a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+.div-shadow {
+    width: 5em;
+    height: 2em;
+
+    border-width: 2px;
+    border-color: black;
+    box-shadow: 0px 0px 10px var(--clr-gray-med);
+    margin: 0 1em 1em 0;
+}
+
+.test {
+    color: #000000;
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+
+/* flashcards display formatting */
+
+.flashcards-pane {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.input-wraper {
+    display: none;
+}
+
+label div.card-data {
+    transition: 1000ms;
+}
+
+.input-wraper:checked + label div.card-data{
+    transform: rotateY(180deg);
+}
+
+.single-card {
+    height: 150px;
+    width: 100px;
+}
+
+.flip-pane {
+    height: 100px;
+    width: 100px;
+}
+
+.card-data {
+    padding: 32px 32px;
+    align-items: center;
+    position: relative;
+    border-style: double;
+    border-width: 3px;
+    border-color: black;
+    background-color: whitesmoke;
+    height: 100px;
+    width: 100px;
+}
+
+.card-data .word{
+    display: grid;
+    justify-content: center;
+}
+
+.card-data .def {
+    display: grid;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.folder_name {
+    position: relative;
+    left: 20%;
+    display: inline-block;
+    margin: 5%;
+    margin-right: 100px;
+    margin-bottom: 10px;
+}
+
+.folders_btn{
+    background-color: #00c8c8; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    width: 150px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    justify-content: space-between;
+    margin-right: 20px;
+    border-style: solid;
+    margin-right: 5em;
+    top : 100px;
+    right : 100px;  
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 0 #41403e;
+    transition: ease-out 0.6s;
+    outline: none;
+}
+
+.folders_btn:hover {
+    box-shadow: inset 300px 0 0 0 #41403e;
+    cursor: pointer;
+}
+
+.navigation p {
+    color: #00c8c8;
+    float: left;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    top: 14px;
+    left: 420px;
+}
+
+.folder_name_title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

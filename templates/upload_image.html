@@ -5,66 +5,85 @@
     <head>
         <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
         <script type="text/javascript" src = "./functions.js"></script>
+        <script>
+            function changeTheme() {
+                var style = document.getElementsByTagName("link")[0]; 
+
+                if (style.getAttribute("href") == "{{url_for('static', filename='css/style.css')}}") {
+                    style.setAttribute("href", "{{url_for('static', filename='css/contrast.css')}}"); 
+                    localStorage.setItem("sheet", "{{url_for('static', filename='css/contrast.css')}}");
+                } else { 
+                    style.setAttribute("href", "{{url_for('static', filename='css/style.css')}}"); 
+                    localStorage.setItem("sheet", "{{url_for('static', filename='css/style.css')}}");
+                }
+            }
+
+            window.onload = function() {
+                if (localStorage.getItem("sheet") == "{{url_for('static', filename='css/style.css')}}" || localStorage.getItem("sheet") == "{{url_for('static', filename='css/contrast.css')}}") {
+                    document.getElementsByTagName("link")[0].setAttribute("href", localStorage.getItem("sheet"));
+                } else {
+                    document.getElementsByTagName("link")[0].setAttribute("href", "{{url_for('static', filename='css/style.css')}}");
+                }
+            }
+        </script>
     </head>
 
     <body>
-      <div class = "navigation">
-        <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt="CardMe (Home)"></a>
-        <div class = "right_navigation">
-            <a href = "/folders">My Folders</a>
-            <a href = "/uploadimage">Upload</a>
+        <div class = "navigation">
+            <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt="CardMe (Home)"></a>
+            <div class = "right_navigation">
+                <a href = "/folders">My Folders</a>
+                <a href = "/uploadimage">Upload</a>
+            </div>
         </div>
-    </div>
 
         <div class="main">
-          <div class="row">
-            <div class=" col">
-        
-              <h1>Upload an image</h1>
-              <hr>
-        
-              <form action="/upload-image" method="POST" enctype="multipart/form-data">
-        
-                <div class="form-group">
-                  <label>Select image</label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="image" id="image">
-                  </div>
-                  <input name="text">
+            <div class="row">
+                <div class=" col">
+
+                    <h1>Upload an image</h1>
+                    <hr>
+
+                    <form action="/upload-image" method="POST" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label>Select image</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="image" id="image">
+                        </div>
+                        <input name="text">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                    </form>
+
+                    <div id='info_section'>
+                        <p>{{ data }}</p>
+                    </div>
+
+                    <script type = "text/javascript">
+                        function addNew(text){
+                            var h = document.createElement("div");
+                            h.innerHTML += text;
+                            h.style.width = "5em";
+                            h.style.height = "2em";
+                            h.style.border = "1px solid black";
+                            h.style.textAlign = "center";
+                            h.style.marginBottom = "1px";
+
+                            var page = document.createElement("html");
+                            document.body.appendChild(page);
+
+                            document.body.appendChild(h);
+                        }
+                    </script>        
                 </div>
-                
-                <button type="submit" class="btn btn-primary">Upload</button>
-              </form>
-
-              <div id='info_section'>
-                <p>{{ data }}</p>
-              </div>
-
-              <script type = "text/javascript">
-
-                function addNew(text){
-                    var h = document.createElement("div");
-                    //var t = document.createTextNode(text);
-                    h.innerHTML += text;
-                    h.style.width = "5em";
-                    h.style.height = "2em";
-                    h.style.border = "1px solid black";
-                    h.style.textAlign = "center";
-                    h.style.marginBottom = "1px";
-
-                    var page = document.createElement("html");
-                    document.body.appendChild(page);
-
-                    document.body.appendChild(h);
-                }
-
-              </script>        
             </div>
-          </div>
         </div>
 
         <div class = footer>
             <p>CSCE 315 Section 900 Team 3</p>
+            <button onclick = "changeTheme()" style = "margin-bottom: 16px">Accessibility Mode</button> 
         </div>
     </body>
 </html>

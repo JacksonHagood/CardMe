@@ -4,7 +4,27 @@
 <html>
     <head>
         <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
+        <script>
+            function changeTheme() {
+                var style = document.getElementsByTagName("link")[0]; 
 
+                if (style.getAttribute("href") == "{{url_for('static', filename='css/style.css')}}") {
+                    style.setAttribute("href", "{{url_for('static', filename='css/contrast.css')}}"); 
+                    localStorage.setItem("sheet", "{{url_for('static', filename='css/contrast.css')}}");
+                } else { 
+                    style.setAttribute("href", "{{url_for('static', filename='css/style.css')}}"); 
+                    localStorage.setItem("sheet", "{{url_for('static', filename='css/style.css')}}");
+                }
+            }
+
+            window.onload = function() {
+                if (localStorage.getItem("sheet") == "{{url_for('static', filename='css/style.css')}}" || localStorage.getItem("sheet") == "{{url_for('static', filename='css/contrast.css')}}") {
+                    document.getElementsByTagName("link")[0].setAttribute("href", localStorage.getItem("sheet"));
+                } else {
+                    document.getElementsByTagName("link")[0].setAttribute("href", "{{url_for('static', filename='css/style.css')}}");
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -26,7 +46,7 @@
             <p>
                 (flashcards page)
                 <form action = "/flashcards" method = "post">
-                    <button name = "demoBTN" type = "submit">DEMO</button>
+                    <button name = "demoBTN" type = "submit">Download Flashcards</button>
                 </form>
 
                 <div class = "flashcards-pane">
@@ -53,7 +73,9 @@
 
         <div class = footer>
             <p>CSCE 315 Section 900 Team 3</p>
+            <button onclick = "changeTheme()" style = "margin-bottom: 16px">Accessibility Mode</button> 
         </div>
+
         <script>
             function changeText(elem) {
                 setTimeout(function() {

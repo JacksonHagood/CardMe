@@ -4,6 +4,27 @@
 <html>
     <head>
         <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
+        <script>
+            function changeTheme() {
+                var style = document.getElementsByTagName("link")[0]; 
+
+                if (style.getAttribute("href") == "{{url_for('static', filename='css/style.css')}}") {
+                    style.setAttribute("href", "{{url_for('static', filename='css/contrast.css')}}"); 
+                    localStorage.setItem("sheet", "{{url_for('static', filename='css/contrast.css')}}");
+                } else { 
+                    style.setAttribute("href", "{{url_for('static', filename='css/style.css')}}"); 
+                    localStorage.setItem("sheet", "{{url_for('static', filename='css/style.css')}}");
+                }
+            }
+
+            window.onload = function() {
+                if (localStorage.getItem("sheet") == "{{url_for('static', filename='css/style.css')}}" || localStorage.getItem("sheet") == "{{url_for('static', filename='css/contrast.css')}}") {
+                    document.getElementsByTagName("link")[0].setAttribute("href", localStorage.getItem("sheet"));
+                } else {
+                    document.getElementsByTagName("link")[0].setAttribute("href", "{{url_for('static', filename='css/style.css')}}");
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -16,25 +37,32 @@
         </div>
 
         <div class = main>
+            <h1>About</h1>
+
             <p>
-                Flashcards are formatted in the following format: (Term 1) * (definition 1); (Term 2) * (definition 2); ...
+                CardMe is a web-based application that allows users to convert their handwritten notes into
+                digitally manageable and printable flashcards. No login is required, simply click on Upload Image,
+                attach a .PNG of .JPG file and give a folder name. Click on My Folders to manage your flashcard
+                groups and click Download Flashcards to get a printable version of them. Notes should be formatted
+                in the following way: TERM * DEFINITION # TERM * DEFINITION # TERM * DEFINITION # ...
             </p>
+
+            <p>
+                This is an educational project created by Kiran Bhattarai, Jackson Hagood, and Mahirah Samah
+            </p>
+
             <h1>API's used:</h1>
+
             <ul>
-                <li>API 1</li>
-                <li>API 2</li>
-                <li>API 3</li>
+                <li><a href = "https://cloud.google.com/vision" target = "_blank">Google Cloud Vision API</a></li>
+                <li><a href = "https://developers.google.com/youtube/v3" target = "_blank">YouTube Data API</a></li>
+                <li><a href = "https://www.convertapi.com/" target = "_blank">Convert API (PDF Generation)</a></li>
             </ul>
-
-            
-
         </div>
-
 
         <div class = footer>
             <p>CSCE 315 Section 900 Team 3</p>
+            <button onclick = "changeTheme()" style = "margin-bottom: 16px">Accessibility Mode</button> 
         </div>
     </body>
 </html>
-
-<!--<button type="button" class = "folder_btn" role="button">Folders</button>-->
