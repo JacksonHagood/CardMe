@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<!-- CSCE 315-900-3 -->
+
+<!-- CardMe | CSCE 315 Section 900 Team 3 | Kiran Bhattarai, Jackson Hagood, and Mahirah Samah -->
 
 <html>
     <head>
         <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
+
         <script>
             function changeTheme() {
                 var style = document.getElementsByTagName("link")[0]; 
@@ -28,67 +30,66 @@
     </head>
 
     <body>
+        <header>
+            <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt = "About"></a>
 
-        <div class = "navigation">
-            <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt="CardMe (Home)"></a>
-            <div class = "right_navigation">
-                <a href = "/folders">My Folders</a>
+            <div class = "navigation">
+                <a href = "/folders">{{fold_n}}</a>
                 <a href = "/uploadimage">Upload</a>
             </div>
-
-            <div class="folder_name_title">
-                <p class = "fn_title">{{fold_n}}</p>
-            </div>
-
-        </div>
-
-        <div class = main>
-            <p>
-                (flashcards page)
-                <form action = "/flashcards" method = "post">
-                    <button name = "demoBTN" type = "submit">Download Flashcards</button>
-                </form>
-
-                <div class = "flashcards-pane">
-                {%for (word, definition, link) in data%}
-                <div class="single-card">
-                    <input type="checkbox" class = "input-wraper" id="id-{{loop.index0}}">
-                    <label for="id-{{loop.index0}}" class = "flip-pane">
-                    <div class="card-data" onclick="changeText(this)">
-                            <div class="word" style="display: grid">
-                                {{word}}
-                            </div>
-                            <div class="def" style="display: none;">
-                                {{definition}}
-                            </div>
+        </header>
+        
+        <article>
+            <div class = "center">
+                <p>
+                    <form action = "/flashcards" method = "post">
+                        <button name = "demoBTN" type = "submit" class = "btn">↓ Download Flashcards</button>
+                    </form>
+    
+                    <div class = "flashcards-pane">
+                    {%for (word, definition, link) in data%}
+                    <div class="single-card">
+                        <input type="checkbox" class = "input-wraper" id="id-{{loop.index0}}">
+                        <label for="id-{{loop.index0}}" class = "flip-pane">
+                        <div class="card-data" onclick="changeText(this)">
+                                <div class="word" style="display: grid">
+                                    {{word}}
+                                </div>
+                                <div class="def" style="display: none;">
+                                    {{definition}}
+                                </div>
+                        </div>
+                        </label>
+                        <a href="{{link}}" target="_blank"> Learn More</a>
                     </div>
-                    </label>
-                    <a href="{{link}}" target="_blank"> Learn More</a>
-                </div>
+    
+                    {%endfor%}
+                    </div>
+                </p>
+            </div>
+        </article>
 
-                {%endfor%}
-                </div>
-            </p>
-        </div>
-
-        <div class = footer>
+        <footer>
             <p>CSCE 315 Section 900 Team 3</p>
-            <button onclick = "changeTheme()" style = "margin-bottom: 16px">Accessibility Mode</button> 
-        </div>
 
-        <script>
-            function changeText(elem) {
-                setTimeout(function() {
-                    if (elem.getElementsByClassName("word")[0].style.display == "none") {
-                        elem.getElementsByClassName("word")[0].style.display = "grid";
-                        elem.getElementsByClassName("def")[0].style.display = "none";
-                    }
-                    else {
-                        elem.getElementsByClassName("word")[0].style.display = "none";
-                        elem.getElementsByClassName("def")[0].style.display = "grid";
-                    }
-                }, 270)
-            }
-        </script>
+            <button onclick = "changeTheme()" class = "btn" style = "margin-bottom: 16px">Accessibility Mode</button> 
+        </footer>
+
+        <head>
+            <script>
+                function changeText(elem) {
+                    setTimeout(function() {
+                        if (elem.getElementsByClassName("word")[0].style.display == "none") {
+                            elem.getElementsByClassName("word")[0].style.display = "grid";
+                            elem.getElementsByClassName("def")[0].style.display = "none";
+                        }
+                        else {
+                            elem.getElementsByClassName("word")[0].style.display = "none";
+                            elem.getElementsByClassName("def")[0].style.display = "grid";
+                        }
+                    }, 270)
+                }
+            </script>
+        </head>
     </body>
 </html>

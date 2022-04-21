@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<!-- CSCE 315-900-3 -->
+
+<!-- CardMe | CSCE 315 Section 900 Team 3 | Kiran Bhattarai, Jackson Hagood, and Mahirah Samah -->
 
 <html>
     <head>
         <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
+
         <script>
             function changeTheme() {
                 var style = document.getElementsByTagName("link")[0]; 
@@ -28,32 +30,35 @@
     </head>
 
     <body>
-        <div class = "navigation">
-            <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt="CardMe (Home)"></a>
-            <div class = "right_navigation">
+        <header>
+            <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt = "About"></a>
+
+            <div class = "navigation">
                 <a href = "/folders">My Folders</a>
                 <a href = "/uploadimage">Upload</a>
             </div>
-        </div>
+        </header>
 
-        <div class = main>
-
-            <p>     
-                {%for item in mylist%}
-                    <div class="folder_name">
-                        <form action = "{{ url_for('runFlashcards') }}" method="post">
-                            <th><button class = "folders_btn" type="text" name="item_fn" value={{ item }} required>{{item}}</button></th>
-                        </form>
-                    </div>
-                {%endfor%}
-
-                {{data}}
-            </p>
-        </div>
-
-        <div class = footer>
+        <article>
+            <div class = "center">
+                <p>     
+                    {%for item in mylist%}
+                        <div class = "folder_name">
+                            <form action = "{{ url_for('runFlashcards') }}" method="post">
+                                <th><button class = "folders_btn" type = "text" name = "item_fn" value={{ item }} required>{{item}}</button></th>
+                            </form>
+                        </div>
+                    {%endfor%}
+    
+                    {{data}}
+                </p>
+            </div>
+        </article>
+        
+        <footer>
             <p>CSCE 315 Section 900 Team 3</p>
-            <button onclick = "changeTheme()" style = "margin-bottom: 16px">Accessibility Mode</button>
-        </div>
+
+            <button onclick = "changeTheme()" class = "btn" style = "margin-bottom: 16px">Accessibility Mode</button>
+        </footer>
     </body>
 </html>

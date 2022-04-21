@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!-- CSCE 315-900-3 -->
+
+<!-- CardMe | CSCE 315 Section 900 Team 3 | Kiran Bhattarai, Jackson Hagood, and Mahirah Samah -->
 
 <html>
     <head>
@@ -29,61 +30,39 @@
     </head>
 
     <body>
-        <div class = "navigation">
-            <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt="CardMe (Home)"></a>
-            <div class = "right_navigation">
+        <header>
+            <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt = "About"></a>
+
+            <div class = "navigation">
                 <a href = "/folders">My Folders</a>
                 <a href = "/uploadimage">Upload</a>
             </div>
-        </div>
+        </header>
 
-        <div class="main">
-            <div class="row">
-                <div class=" col">
+        <article>
+            <div class = "center">    
+                <h1>Upload an image</h1>
 
-                    <h1>Upload an image</h1>
-                    <hr>
+                <hr>
 
-                    <form action="/upload-image" method="POST" enctype="multipart/form-data">
-
-                    <div class="form-group">
-                        <label>Select image</label>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="image" id="image">
+                <form action = "/upload-image" method = "POST" enctype = "multipart/form-data">
+                    <div class = "form-group">
+                        <div class = "custom-file">
+                            <input type = "file" class = "custom-file-input" name = "image" id = "image">
                         </div>
-                        <input name="text">
+
+                        <input name = "text" placeholder = "Folder Name">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Upload</button>
-                    </form>
-
-                    <div id='info_section'>
-                        <p>{{ data }}</p>
-                    </div>
-
-                    <script type = "text/javascript">
-                        function addNew(text){
-                            var h = document.createElement("div");
-                            h.innerHTML += text;
-                            h.style.width = "5em";
-                            h.style.height = "2em";
-                            h.style.border = "1px solid black";
-                            h.style.textAlign = "center";
-                            h.style.marginBottom = "1px";
-
-                            var page = document.createElement("html");
-                            document.body.appendChild(page);
-
-                            document.body.appendChild(h);
-                        }
-                    </script>        
-                </div>
+                    <button type = "submit" class = "btn btn-primary">↑ Upload</button>
+                </form>
             </div>
-        </div>
-
-        <div class = footer>
+        </article>
+        
+        <footer>
             <p>CSCE 315 Section 900 Team 3</p>
-            <button onclick = "changeTheme()" style = "margin-bottom: 16px">Accessibility Mode</button> 
-        </div>
+
+            <button onclick = "changeTheme()" class = "btn" style = "margin-bottom: 16px">Accessibility Mode</button>
+        </footer>
     </body>
 </html>

@@ -1,69 +1,93 @@
-.navigation {
-    background-color: #333333;
-    left: 0;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
+/* CardMe | CSCE 315 Section 900 Team 3 | Kiran Bhattarai, Jackson Hagood, and Mahirah Samah */
+
+@font-face {
+    font-family: Noto;
+    src: url("NotoSans.ttf");
 }
 
-#name {
-    margin-left: 12.5%;
+body {
+    font-family: Noto;
+    margin: 0;
+}
+
+header {
+    background-color: #252525;
+    border-bottom: solid 15px #00FFFF;
+    height: 120px;
+    overflow: hidden;   
+}
+
+header img {
     float: left;
-    padding: 10px 10px;
+    height: 100%;
+    margin-left: 15%;
 }
 
-#name img {
-    width: 200px;
-    height: 100px;
+.navigation {
+    margin-right: 15%;
+    padding: 20px 0px 20px 0px;
 }
 
 .navigation a {
-    color: #ffffff;
+    color: #FFFFFF;
     float: right;
-    font-size: 32px;
-    padding: 45px 45px;
-    text-align: center;
+    font-size: 30px;
+    padding: 25px;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .navigation a:hover {
-    background-color: #dddddd;
-    color: #000000;
+    color: #00FFFF;
 }
 
-.right_navigation {
-    margin-right: 12.5%;
+article {
+    background-color: #444444;
+    color: #FFFFFF;
+    min-height: 100vh;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
-#name:hover {
-    background-color: #dddddd;
-    color: #000000;
-}
-
-.main {
-    margin-left: 12.5%;
-    margin-right: 12.5%;
-    margin-top: 150px;
-}
-
-.main ul {
-    list-style-type: circle;
-}
-
-.main li {
+article p {
     font-size: 20px;
 }
 
-.footer {
-    background-color: #333333;
-    bottom: 0;
-    color: white;
-    font-size: 15px;
-    left: 0;
-    position: fixed;
-    text-align: center;
+article hr {
+    border: 2px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+
+.center {
+    clear: both;
+    padding-top: 20px;
     width: 100%;
+}
+
+footer {
+    background-color: #252525;
+    border-top: solid 15px #00FFFF;
+    overflow: hidden;
+    padding: 30px 0px 30px 0px;
+    text-align: center;
+}
+
+footer p {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.btn {
+    background-color: #00FFFF; /* Green */
+    border: none;
+    color: #252525;
+    font-size: 16px;
+    display: inline-block;
+    margin: 8px 0px;
+    padding: 16px 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
 }
 
 .button {
@@ -171,7 +195,7 @@ label div.card-data {
     border-style: double;
     border-width: 3px;
     border-color: black;
-    background-color: whitesmoke;
+    background-color: #252525;
     height: 100px;
     width: 100px;
 }
@@ -197,9 +221,9 @@ label div.card-data {
 }
 
 .folders_btn{
-    background-color: #00c8c8; 
+    background-color: #00FFFF; 
     border: none;
-    color: white;
+    color: #000000;
     padding: 15px 32px;
     width: 150px;
     height: 60px;
@@ -207,16 +231,13 @@ label div.card-data {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-
     justify-content: space-between;
     margin-right: 20px;
     border-style: solid;
     margin-right: 5em;
     top : 100px;
     right : 100px;  
-
     border-radius: 4px;
-
     box-shadow: inset 0 0 0 0 #41403e;
     transition: ease-out 0.6s;
     outline: none;
