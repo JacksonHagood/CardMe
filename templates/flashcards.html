@@ -4,6 +4,8 @@
 
 <html>
     <head>
+        <title>CardMe | {{fold_n}}</title>
+
         <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
 
         <script>
@@ -34,7 +36,8 @@
             <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt = "About"></a>
 
             <div class = "navigation">
-                <a href = "/folders">{{fold_n}}</a>
+                <a>{{fold_n}}</a>
+                <a href = "/folders">Folders</a>
                 <a href = "/uploadimage">Upload</a>
             </div>
         </header>

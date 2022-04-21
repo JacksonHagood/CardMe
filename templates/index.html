@@ -6,7 +6,7 @@
     <head>
         <title>CardMe | About</title>
 
-        <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
+        <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename = 'css/style.css')}}"/>
 
         <script>
             function changeTheme() {
@@ -22,10 +22,10 @@
             }
 
             window.onload = function() {
-                if (localStorage.getItem("sheet") == "{{url_for('static', filename='css/style.css')}}" || localStorage.getItem("sheet") == "{{url_for('static', filename='css/contrast.css')}}") {
+                if (localStorage.getItem("sheet") == "{{url_for('static', filename = 'css/style.css')}}" || localStorage.getItem("sheet") == "{{url_for('static', filename='css/contrast.css')}}") {
                     document.getElementsByTagName("link")[0].setAttribute("href", localStorage.getItem("sheet"));
                 } else {
-                    document.getElementsByTagName("link")[0].setAttribute("href", "{{url_for('static', filename='css/style.css')}}");
+                    document.getElementsByTagName("link")[0].setAttribute("href", "{{url_for('static', filename = 'css/style.css')}}");
                 }
             }
         </script>
@@ -33,7 +33,7 @@
 
     <body>
         <header>
-            <a href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt = "About"></a>
+            <a href = "/index"><img src = "{{url_for('static', filename = 'img/Logo.png')}}" alt = "About"></a>
 
             <div class = "navigation">
                 <a href = "/folders">My Folders</a>

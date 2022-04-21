@@ -63,9 +63,14 @@ article hr {
     background-color: #FFFFFF;
 }
 
+article a {
+    color: #00FFFF;
+}
+
 .center {
     clear: both;
     padding-top: 20px;
+    padding-bottom: 20px;
     width: 100%;
 }
 
