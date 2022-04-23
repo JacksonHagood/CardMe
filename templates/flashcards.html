@@ -70,6 +70,10 @@
                     </div>
                 </p>
             </div>
+
+                <form action = "{{ url_for('editFlashcards') }}" method="post">
+                    <th><button class = "folders_btn" type = "text" name = "item_fn" value={{fold_n}} required>CHANGE</button></th>
+                </form>
         </article>
 
         <footer>

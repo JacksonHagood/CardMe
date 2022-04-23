@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- CSCE 315-900-3 -->
+
+<html>
+    <head>
+        <link id = "theme" rel = "stylesheet" type = "text/css" href = "{{url_for('static', filename='css/style.css')}}"/>
+
+        <script>
+            function changeTheme() {
+                var style = document.getElementsByTagName("link")[0]; 
+
+                if (style.getAttribute("href") == "{{url_for('static', filename='css/style.css')}}") {
+                    style.setAttribute("href", "{{url_for('static', filename='css/contrast.css')}}"); 
+                    localStorage.setItem("sheet", "{{url_for('static', filename='css/contrast.css')}}");
+                } else { 
+                    style.setAttribute("href", "{{url_for('static', filename='css/style.css')}}"); 
+                    localStorage.setItem("sheet", "{{url_for('static', filename='css/style.css')}}");
+                }
+            }
+
+            window.onload = function() {
+                if (localStorage.getItem("sheet") == "{{url_for('static', filename='css/style.css')}}" || localStorage.getItem("sheet") == "{{url_for('static', filename='css/contrast.css')}}") {
+                    document.getElementsByTagName("link")[0].setAttribute("href", localStorage.getItem("sheet"));
+                } else {
+                    document.getElementsByTagName("link")[0].setAttribute("href", "{{url_for('static', filename='css/style.css')}}");
+                }
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <header>
+            <a href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt = "About"></a>
+
+            <div class = "navigation">
+                <a href = "/folders">My Folders</a>
+                <a href = "/uploadimage">Upload</a>
+            </div>
+        </header>   
+
+        <article>
+            <div class = main>
+                
+                <form action = "{{ url_for('confirmEdit', folderName=fName) }}" method="post">
+                    {%for (word, def) in data%}
+
+                        <label for="word-{{loop.index0}}">Word:</label>
+                        <input type="text" id="word-{{loop.index0}}" name="word-{{loop.index0}}" value="{{word}}"><br></br>
+
+                        <label for="def-{{loop.index0}}">Definition:</label>
+                        <input type="text" id="def-{{loop.index0}}" name="def-{{loop.index0}}" value="{{def}}"><br></br>
+
+                    {%endfor%}
+                    <input name="item_fn" value="{{fName}}" style="display: none;">
+
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+
+        </article>
+
+
+        <footer>
+            <p>CSCE 315 Section 900 Team 3</p>
+            <button onclick = "changeTheme()" class = "btn" style = "margin-bottom: 16px">Accessibility Mode</button> 
+        </footer>
+    </body>
+</html>
+
+<!--<button type="button" class = "folder_btn" role="button">Folders</button>-->
