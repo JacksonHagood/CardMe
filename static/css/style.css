@@ -261,9 +261,9 @@ label div.card-data {
     font-weight: bold;
     position: absolute;
     top: 14px;
-    left: 420px;
+    left: 520px;
 }
 
-.folder_name_title {
+.folderNameTitle {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
