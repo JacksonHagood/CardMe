@@ -36,44 +36,52 @@
             <a id = "name" href = "/index"><img src = "{{url_for('static', filename='img/Logo.png')}}" alt = "About"></a>
 
             <div class = "navigation">
-                <p class = "folderNameTitle">{{fold_n}}</p>
-                <a href = "/folders">Folders</a>
+                <a href = "/folders">My Folders</a>
                 <a href = "/uploadimage">Upload</a>
             </div>
         </header>
         
         <article>
             <div class = "center">
-                <p>
-                    <form action = "/flashcards" method = "post">
-                        <button name = "demoBTN" type = "submit" class = "btn">↓ Download Flashcards</button>
-                    </form>
-    
+                <h1 style = "float: left;">Folder: {{fold_n}}</h1>
+
+                <form action = "/flashcards" method = "post" style = "float: right;">
+                    <button name = "demoBTN" type = "submit" class = "btn">↓ Download Flashcards</button>
+                </form>
+            </div>
+
+            <div class = "center">
+                <p>    
                     <div class = "flashcards-pane">
-                    {%for (word, definition, link) in data%}
-                    <div class="single-card">
-                        <input type="checkbox" class = "input-wraper" id="id-{{loop.index0}}">
-                        <label for="id-{{loop.index0}}" class = "flip-pane">
-                        <div class="card-data" onclick="changeText(this)">
-                                <div class="word" style="display: grid">
-                                    {{word}}
-                                </div>
-                                <div class="def" style="display: none;">
-                                    {{definition}}
-                                </div>
+                        {%for (word, definition, link) in data%}
+                        <div class = "single-card">
+                            <input type = "checkbox" class = "input-wraper" id = "id-{{loop.index0}}">
+                            <label for = "id-{{loop.index0}}" class = "flip-pane">
+                            <div class = "card-data" onclick = "changeText(this)">
+                                    <div class = "word" style = "display: grid">
+                                        <p>{{word}}</p>
+                                    </div>
+                                    <div class = "def" style = "display: none;">
+                                        <p>{{definition}}</p>
+                                        <a href = "{{link}}" target = "_blank">Learn More</a>
+                                    </div>
+                            </div>
+                            </label>
+                            
                         </div>
-                        </label>
-                        <a href="{{link}}" target="_blank"> Learn More</a>
-                    </div>
-    
-                    {%endfor%}
+        
+                        {%endfor%}
                     </div>
                 </p>
             </div>
 
+            <div class = "center">
                 <form action = "{{ url_for('editFlashcards') }}" method="post">
-                    <th><button class = "folders_btn" type = "text" name = "item_fn" value={{fold_n}} required>CHANGE</button></th>
+                    <th><button class = "folders_btn" type = "text" name = "item_fn" value={{fold_n}} required>Edit</button></th>
                 </form>
+            </div>
+
+            <div class = "center"></div>
         </article>
 
         <footer>
