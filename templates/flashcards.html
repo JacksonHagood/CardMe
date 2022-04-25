@@ -76,10 +76,17 @@
             </div>
 
             <div class = "center">
-                <form action = "{{ url_for('editFlashcards') }}" method="post">
+                <form action = "{{ url_for('editFlashcards') }}" method = "post">
                     <th><button class = "folders_btn" type = "text" name = "item_fn" value={{fold_n}} required>Edit</button></th>
                 </form>
             </div>
+
+            <div class = "center">
+                <form action = "/deleteFolder" method = "post">
+                    <th><button class = "folders_btn" type = "text" name = "item_fn" value={{fold_n}} required>Delete</button></th>
+                </form>
+            </div>
+            
 
             <div class = "center"></div>
         </article>
