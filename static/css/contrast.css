@@ -64,6 +64,7 @@ article hr {
 }
 
 article a {
+    font-size: 30px;
     color: #00FFFF;
 }
 
@@ -88,85 +89,16 @@ footer p {
 }
 
 .btn {
-    background-color: #00FFFF; /* Green */
+    background-color: #FF00FF;
     border: none;
     color: #252525;
-    font-size: 16px;
+    cursor: pointer;
     display: inline-block;
+    font-size: 32px;
     margin: 8px 0px;
     padding: 16px 16px;
-    cursor: pointer;
     text-align: center;
     text-decoration: none;
-}
-
-.button {
-    align-self: center;
-    background-color: #fff;
-    background-image: none;
-    background-position: 0 90%;
-    background-repeat: repeat no-repeat;
-    background-size: 4px 3px;
-    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
-    border-style: solid;
-    border-width: 2px;
-    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
-    box-sizing: border-box;
-    color: #41403e;
-    cursor: pointer;
-    text-align:center;
-    font-family: Neucha, sans-serif;
-    font-size: 1rem;
-    line-height: 23px;
-    outline: none;
-    padding: .75rem;
-    text-decoration: none;
-    transition: all 235ms ease-in-out;
-    border-bottom-left-radius: 15px 255px;
-    border-bottom-right-radius: 225px 15px;
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 225px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 10%;
-    position: relative;
-    left: 45%;
-    top: 100px;
-}
-
-.button:hover {
-    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-    transform: translate3d(0, 2px, 0);
-}
-
-.button:focus {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-}
-
-.button a {
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
-}
-
-.div-shadow {
-    width: 5em;
-    height: 2em;
-
-    border-width: 2px;
-    border-color: black;
-    box-shadow: 0px 0px 10px var(--clr-gray-med);
-    margin: 0 1em 1em 0;
-}
-
-.test {
-    color: #000000;
-    position: relative;
-    top: 50%;
-    left: 50%;
 }
 
 /* flashcards display formatting */
@@ -191,14 +123,14 @@ label div.card-data {
 
 .single-card {
     height: 200px;
-    margin: 1%;
-    width: 98%;
+    margin: 3%;
+    width: 94%;
 }
 
 .flip-pane {
     height: 200px;
-    margin: 1%;
-    width: 98%;
+    margin: 3%;
+    width: 94%;
 }
 
 .card-data {
@@ -206,6 +138,7 @@ label div.card-data {
     background-color: #252525;
     border: none;
     height: 200px;
+    outline: 5px solid #FF00FF; 
     position: relative;
     width: 100%;
 }
@@ -231,11 +164,11 @@ label div.card-data {
 
 .folders_btn{
     background-color: #252525; 
-    border: none;
     color: #FF00FF;
     display: inline-block;
     font-size: 32px;
     height: 100px;
+    outline: 5px solid #FF00FF;
     width: 100%;
     text-align: center;
     text-decoration: none;
