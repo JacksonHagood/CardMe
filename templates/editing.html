@@ -31,41 +31,57 @@
                 var data_len = document.getElementById("length-data").getAttribute("data-len");
 
                 const label_1 = document.createElement("label");
+                label_1.id = "wordlabel-" + data_len;
                 label_1.for = "word-" + data_len;
                 label_1.innerHTML = "Word:";
+                label_1.setAttribute("form", "outer-form");
                 
                 const input_1 = document.createElement("input");
                 input_1.type = "text";
                 input_1.id = "word-" + data_len;
                 input_1.name = "word-" + data_len;
                 input_1.value = "New Word";
+                input_1.setAttribute("form", "outer-form");
 
                 const label_2 = document.createElement("label");
+                label_2.id = "deflabel-" + data_len;
                 label_2.for = "def-" + data_len;
                 label_2.innerHTML = "Definition:";
+                label_2.form = "outer-form";
                 
                 const input_2 = document.createElement("input");
                 input_2.type = "text";
                 input_2.id = "def-" + data_len;
                 input_2.name = "def-" + data_len;
                 input_2.value = "New Definition";
+                input_2.setAttribute("form", "outer-form");
 
-                const line_break1 = document.createElement("br");
-                const line_break2 = document.createElement("br");
-                const line_break3 = document.createElement("br");
+                const deleteButton = document.createElement("button");
+                deleteButton.id = "deletebutton-" + data_len;
+                deleteButton.setAttribute("onclick", "deleteCard(" + data_len + ")");
+                deleteButton.innerHTML = "x";
 
-                let myForm = document.getElementById("outer-form");
-                let myButton = document.getElementById("submit-button");
-                myButton.before(label_1);
-                myButton.before(input_1);
-                myButton.before(line_break1);
-                myButton.before(label_2);
-                myButton.before(input_2);
-                myButton.before(line_break2);
-                myButton.before(line_break3);
-
-                document.getElementById("length-data").setAttribute("data-len", data_len + 1);
                 
+                const outerdiv = document.createElement("div");
+                outerdiv.appendChild(label_1);
+                outerdiv.appendChild(input_1);
+                outerdiv.appendChild(label_2);
+                outerdiv.appendChild(input_2);
+                outerdiv.appendChild(deleteButton);
+
+                document.getElementsByClassName("outer")[0].appendChild(outerdiv);
+                
+
+                document.getElementById("length-data").setAttribute("data-len", (parseInt(data_len) + 1).toString());
+                
+            }
+
+            function deleteCard(num) {
+                document.getElementById("word-" + num).remove();
+                document.getElementById("def-" + num).remove();
+                document.getElementById("wordlabel-" + num).remove();
+                document.getElementById("deflabel-" + num).remove();
+                document.getElementById("deletebutton-" + num).remove();
             }
         </script>
 
@@ -84,22 +100,26 @@
         <article>
             <div class = main>
                 <meta id="length-data" data-len = "{{data|length}}">
-                <form action = "{{ url_for('confirmEdit', folderName=fName) }}" method="post" id="outer-form">
+                <form action = "{{ url_for('confirmEdit', folderName=fName) }}" method="post" id="outer-form"></form>
+
+                <div class = "outer">
                     {%for (word, def) in data%}
+                        <div>
+                            <label id="wordlabel-{{loop.index0}}" for="word-{{loop.index0}}" form="outer-form">Word:</label>
+                            <input type="text" id="word-{{loop.index0}}" name="word-{{loop.index0}}" value="{{word}}" form="outer-form">
 
-                        <label for="word-{{loop.index0}}">Word:</label>
-                        <input type="text" id="word-{{loop.index0}}" name="word-{{loop.index0}}" value="{{word}}"><br>
+                            <label id="deflabel-{{loop.index0}}" for="def-{{loop.index0}}" form="outer-form">Definition:</label>
+                            <input type="text" id="def-{{loop.index0}}" name="def-{{loop.index0}}" value="{{def}}" form="outer-form">
 
-                        <label for="def-{{loop.index0}}">Definition:</label>
-                        <input type="text" id="def-{{loop.index0}}" name="def-{{loop.index0}}" value="{{def}}"><br><br>
-
-                    {%endfor%}
-                    <input name="item_fn" value="{{fName}}" style="display: none;">
-
-                    <input  id = "submit-button" type="submit" value="Submit">
-                </form>
-                
+                            <button id= "deletebutton-{{loop.index0}}" onclick="deleteCard({{loop.index0}})">x</button>
+                        </div>
+                    {%endfor%}                    
+                </div>
+    
                 <button onclick = "addNewWord()">Add New</button>
+                <input name="item_fn" value="{{fName}}" style="display: none;" form="outer-form">
+                <input  id = "submit-button" type="submit" value="Submit" form="outer-form">
+                
             </div>
 
         </article>
