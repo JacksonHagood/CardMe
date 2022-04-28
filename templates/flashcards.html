@@ -54,7 +54,7 @@
                 <h1 style = "float: left;">Folder: {{fold_n}}</h1>
 
                 <form action = "/flashcards" method = "post" style = "float: right;">
-                    <button name = "demoBTN" type = "submit" class = "btn">↓ Download Flashcards</button>
+                    <button name = "demoBTN" type = "submit" class = "btn">↓ Print Flashcards</button>
                 </form>
             </div>
 
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class = "def" style = "display: none;">
                                         <p>{{definition}}</p>
-                                        <!-- <a href = "{{link}}" target = "_blank" onclick="fix({{loop.index0}})">Learn More</a>-->
+                                        <a href = "{{link}}" target = "_blank" onclick = "fix({{loop.index0}})">Learn More</a>
                                     </div>
                             </div>
                             </label>
