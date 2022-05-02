@@ -173,3 +173,92 @@ label div.card-data {
     color: #444444;
     cursor: pointer;
 }
+
+.outer {
+    position: absolute;
+    
+    top: 26%;
+    left: 50px;
+}
+
+.inner {
+    height:80px;
+    width:700px;
+}
+
+.l2 {
+    padding-left: 30px;
+}
+
+.i1 {
+    height:20px;
+    width:120px;
+    padding-right: 50px;
+}
+
+.i2 {
+    height:20px;
+    width:230px;
+}
+
+
+.edit_page_btn1 {
+    background-color: #252525; 
+    border: none;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 24px;
+    height: 70px;
+    width: 13%;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    top: 70px;
+    left: 1043px;
+}
+
+.edit_page_btn1:hover {
+    background-color: #00FFFF;
+    color: #444444;
+    cursor: pointer;
+}
+
+.edit_page_btn2 {
+    background-color: #252525; 
+    border: none;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 24px;
+    height: 70px;
+    width: 13%;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    top: 160px;
+    left: 900px;
+}
+
+.edit_page_btn2:hover {
+    background-color: #00FFFF;
+    color: #444444;
+    cursor: pointer;
+}
+
+.delete_card_button {
+    background-color: #252525; 
+    border: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    text-decoration: none;
+    position: relative;
+    top: 1.5px;
+    left: 15px;
+}
+
+.delete_card_button:hover {
+    background-color: #00FFFF;
+    color: #444444;
+    cursor: pointer;
+}
