@@ -29,6 +29,14 @@
                 }
             }
 
+            if (window.name == "back") {
+                window.name = "";
+                location.reload();
+            }
+            window.onbeforeunload = function() {
+                window.name = "back"; 
+            }
+
             function fix(num) {
                 setTimeout(function() {
                     document.getElementsByClassName("word")[num].style.display = "none";
@@ -53,7 +61,7 @@
             <div class = "center">
                 <h1 style = "float: left;">Folder: {{fold_n}}</h1>
 
-                <form action = "/flashcards" method = "post" style = "float: right;">
+                <form action = "/flashcards" method = "post" style = "float: right;" target="_blank">
                     <button name = "demoBTN" type = "submit" class = "btn">↓ Print Flashcards</button>
                 </form>
             </div>
