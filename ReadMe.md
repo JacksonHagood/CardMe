@@ -17,9 +17,11 @@ CardMe is a web-based application that allows users to convert their handwritten
 
 This is an educational project created by Kiran Bhattarai, Jackson Hagood, and Mahirah Samah
 
-# API's used
+# API's & Technologies
 
 - Google Cloud Vision API
 - YouTube Data API
 - Convert API
 - Google Firebase
+- Flask (Python framework)
+- Heroku
