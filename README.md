@@ -9,6 +9,8 @@ Team members:
 - Jackson Hagood
 - Mahirah Samah
 
+Demonstration video: https://www.youtube.com/watch?v=KhxLbaobS6U&ab_channel=JacksonHagood.
+
 # About
 
 CardMe is a web-based application that allows users to convert their handwritten notes into digitally manageable and printable flashcards. No login is required, simply click on Upload Image, attach a .PNG of .JPG file and give a folder name. Click on My Folders to manage your flashcard groups and click Download Flashcards to get a printable version of them. Notes should be formatted in the following way: TERM * DEFINITION # TERM * DEFINITION # TERM * DEFINITION # ...
