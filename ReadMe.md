@@ -9,7 +9,7 @@ Team members:
 - Jackson Hagood
 - Mahirah Samah
 
-Demonstration video: https://www.youtube.com/watch?v=KhxLbaobS6U&ab_channel=JacksonHagood.
+Demonstration video: https://youtu.be/KhxLbaobS6U.
 
 # About
 
