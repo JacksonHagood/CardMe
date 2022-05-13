@@ -1,6 +1,6 @@
 # CardMe
 
-Digital solution to any student's flashcard needs. Allows users to upload pictures of their handwritten notes and obtain digitally manageable flashcards. CardMe allows the user to groups these flashcards into folders, edit flashcards, delete flashcards, add flashcards, and delete folders. CardMe also allows users to easily find YouTube videos related to their flashcards. Finally, CardMe can export a folder of flashcards as a PDF that, when printed double sided, can be cut out into flashcards.
+Digital solution to any student's flashcard needs. Allows users to upload pictures of their handwritten notes and obtain digitally manageable flashcards. CardMe allows the user to groups these flashcards into folders, edit flashcards, delete flashcards, add flashcards, and delete folders. CardMe also allows users to easily find YouTube videos related to their flashcards. Finally, CardMe can export a folder of flashcards as a PDF that, when printed double sided, can be cut out into flashcards. Final project for CSCE 315.
 
 For an example, see the Examples where Physics.png was uploaded and later converted to a Physics.pdf.
 
